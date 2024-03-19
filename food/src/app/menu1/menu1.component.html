@@ -1,19 +1,6 @@
 <main>
-    <app-header></app-header>
     <main class="filter-container">
       <div class="filter-options">
-        <!--<div>
-          <label for="filter">Filter:</label>
-          <select id="filter" [(ngModel)]="selectedFilter">
-            <option value="">All</option>
-            <option value="soup">Soups</option>
-            <option value="starter">Starters</option>
-            <option value="curry">Curries</option>
-            <option value="bread">Breads</option>
-            <option value="mainCourse">Main Course</option>
-            <option value="dessert">Desserts</option>
-          </select>
-        </div>-->
         <div class="box" *ngIf="showCart">{{ cartMessage }}</div>
         <div>
           <label for="veg-switch" style="color: black;">Veg</label>
@@ -116,9 +103,7 @@
         </div>
         <button (click)="addItemToCart(milkshake)" *ngIf="(showVeg && milkshake.type === 'veg') || (showNonVeg && milkshake.type === 'non-veg') || (!showVeg && !showNonVeg)">Add to Cart</button>  </div>
     </div>
-    <!--<footer class="footer">
-      <app-footer></app-footer>
-    </footer>-->
+
     </div>
     </div>
     </main>

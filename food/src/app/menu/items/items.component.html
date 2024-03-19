@@ -1,28 +1,10 @@
-<!-- <div class="navbar">
-  <div class="leftbar">
-      <ul>
-          <li><a href=" "><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOVHDyOq-G2nM1sQVk5ICoR84Fsmd_MTzwAF1rhEg7lEdovP8Wryzw8apfmH0oH3M5EAI&usqp=CAU" alt=""></a></li>
-          <div style="margin-top: 12%; margin-left: -7%;">
-              WELCOME
-          </div>
-      </ul>
-  </div>
-  <div class="rightbar">
-      <ul>
-          <li><span class="material-symbols-outlined"></span>Search</li>
-          <li> <a href="#" routerLink="/offer">%Offer</a></li>
-          <li><span class="material-symbols-outlined"></span>Menu</li>
-          <li> <a href="#" routerLink="/support">Help</a></li>
-          <li><a class="nav-link" routerLink="/cart">Cart ({{ cartItemCount }})</a></li>
-        </ul>
-  </div>
-</div> -->
 
 <main>
 <main class="filter-container">
   <div class="filter-options">
     <div class="box" *ngIf="showCart">{{ cartMessage }}</div>
     <div>
+
       <label for="veg-switch" style="color: black;">Veg</label>
       <label class="switch">
         <input type="checkbox" id="veg-switch" [(ngModel)]="showVeg">
@@ -36,18 +18,7 @@
     </div>
   </div>
   <div class="container">
-    <!-- <h2 style="color:black">Soups</h2> -->
     <div class="row">
-<!-- 
-      <div class="card col-2" *ngFor="let soup of getFilteredSoups()">
-        <img [src]="soup.image" [alt]="soup.name">
-        <h3>{{ soup.name }}</h3>
-        <p class="price">{{ soup.price | currency: 'INR' }}</p>
-        <div class="rating">
-        </div>
-        <button (click)="addItemToCart(soup)" *ngIf="(showVeg && soup.type === 'veg') || (showNonVeg && soup.type === 'non-veg') || (!showVeg && !showNonVeg)">Add to Cart</button>
-    </div> -->
-
     <h2 style="color:black">Starters</h2>
     <div class="row">
       <div class="card col-2" *ngFor="let starter of getFilteredStarters()">
@@ -60,62 +31,6 @@
         <button (click)="addItemToCart(starter)" *ngIf="(showVeg && starter.type === 'veg') || (showNonVeg && starter.type === 'non-veg') || (!showVeg && !showNonVeg)">Add to Cart</button>
       </div>
     </div>
-
-    <!-- <h2 style="color:black">Curries</h2>
-    <div class="row">
-      <div class="card col-2" *ngFor="let curry of getFilteredCurries()">
-        <img [src]="curry.image" [alt]="curry.name">
-        <h3>{{ curry.name }}</h3>
-        <p class="price">{{ curry.price | currency: 'INR' }}</p>
-        <div class="rating">
-        </div>
-        <button (click)="addItemToCart(curry)" *ngIf="(showVeg && curry.type === 'veg') || (showNonVeg && curry.type === 'non-veg') || (!showVeg && !showNonVeg)">Add to Cart</button>
-      </div>
-    </div> -->
-<!-- <h2 style="color:black">Breads</h2>
-<div class="row">
-  <div class="card col-2" *ngFor="let bread of getFilteredBreads()">
-    <img [src]="bread.image" [alt]="bread.name">
-    <h3>{{ bread.name }}</h3>
-    <p class="price">{{ bread.price | currency: 'INR' }}</p>
-    <div class="rating">
-    </div>
-    <button (click)="addItemToCart(bread)" *ngIf="(showVeg && bread.type === 'veg') || (showNonVeg && bread.type === 'non-veg') || (!showVeg && !showNonVeg)">Add to Cart</button>
-  </div>
-</div>
-<h2 style="color:black">Main Course</h2>
-<div class="row">
-  <div class="card col-2" *ngFor="let mainCourse of getFilteredMainCourses()">
-    <img [src]="mainCourse.image" [alt]="mainCourse.name">
-    <h3>{{ mainCourse.name }}</h3>
-    <p class="price">{{ mainCourse.price | currency: 'INR' }}</p>
-    <div class="rating">
-    </div>
-    <button (click)="addItemToCart(mainCourse)" *ngIf="(showVeg && mainCourse.type === 'veg') || (showNonVeg && mainCourse.type === 'non-veg') || (!showVeg && !showNonVeg)">Add to Cart</button>
-  </div>
-</div>
-<h2 style="color:black">Desserts</h2>
-<div class="row">
-  <div class="card col-2" *ngFor="let dessert of getFilteredDesserts()">
-    <img [src]="dessert.image" [alt]="dessert.name">
-    <h3>{{ dessert.name }}</h3>
-    <p class="price">{{ dessert.price | currency: 'INR' }}</p>
-    <div class="rating">
-    </div>
-    <button (click)="addItemToCart(dessert)" *ngIf="(showVeg && dessert.type === 'veg') || (showNonVeg && dessert.type === 'non-veg') || (!showVeg && !showNonVeg)">Add to Cart</button>
-  </div>
-</div>
-<h2 style="color:black">Ice Creams</h2>
-<div class="row">
-  <div class="card col-2" *ngFor="let iceCream of getFilteredIceCreams()">
-    <img [src]="iceCream.image" [alt]="iceCream.name">
-    <h3>{{ iceCream.name }}</h3>
-    <p class="price">{{ iceCream.price | currency: 'INR' }}</p>
-    <div class="rating">
-    </div>
-    <button (click)="addItemToCart(iceCream)" *ngIf="(showVeg && iceCream.type === 'veg') || (showNonVeg && iceCream.type === 'non-veg') || (!showVeg && !showNonVeg)">Add to Cart</button>
-  </div>
-</div> -->
 <h2 style="color:black">Milkshakes</h2>
 <div class="row">
   <div class="card col-2" *ngFor="let milkshake of getFilteredMilkshakes()">
@@ -129,4 +44,3 @@
 </div>
 </div>
 </main>
-<!-- <app-footer></app-footer> -->

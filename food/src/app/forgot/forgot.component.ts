@@ -13,7 +13,6 @@ export class register {
   styleUrls: ['./forgot.component.scss']
 })
 export class ForgotComponent{
-  // email: string = '';
   emailform!: FormGroup;
   user: register;
 

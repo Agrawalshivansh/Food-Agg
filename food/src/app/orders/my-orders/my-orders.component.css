@@ -10,7 +10,6 @@ body {
 }
 
 h2 {
-  /* color: #bbd169; */
   color: #000;
   font-size: 2rem;
   text-align: center;
@@ -25,7 +24,6 @@ table {
 }
 
 th {
-  /* background-color: #72c6d2; */
   background-color:chocolate;
   color: #fff;
   font-weight: 600;
@@ -48,59 +46,3 @@ tbody tr:nth-child(odd) {
 tbody tr:hover {
   background-color: #e6e6e6;
 }
-/* .navbar{
-  z-index: 99;
-  position: fixed;
-  top: 0;
-  display: flex;
-  width: 100vw;
-  height: 80px;
-  background-color: white;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
-}
-
-ul{
-  display: flex;
-  list-style: none;
-}
-li{
-  margin: 0px 20px;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
-  cursor: pointer;
-  padding: 10px;
-}
-.leftbar{
-  width: 50%;
-  display: flex;
-  justify-content: flex-start;
-}
-.leftbar li{
-  margin: 5px;
-}
-.leftbar img{
-  height: 50px;
-  margin: 0 25px;
-}
-
-.rigthbar{
-  width: 50%;
-  display: flex;
-  justify-content: center;
-}
-
-li:hover{
-  color: #fc8019;
-}
-a{
-  color: black;
-  text-decoration: none;
-}
-a:hover{
-  color: #fc8019;
-} */

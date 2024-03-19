@@ -30,14 +30,7 @@ export class OrderSuccessComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.orderId = Math.floor(Math.random() * 1000000) + 1; // Generate a random order ID
-    // this.transactionId = 'TRX' + Math.floor(Math.random() * 1000000) + 1; // Generate a random transaction ID
-    // this.items = this.cartService.getCartItems(); // Get cart items from cart service
-    // this.total = this.cartService.getTotalPrice(); // Get total price from cart service
-
-    // this.cartService.clearCart(); // Clear cart after successful order placement
     this.orderSuccessSubscription = this.orderService.onOrderSuccess().subscribe(orderData => {
-      // Update component properties with order data
       this.orderId = orderData.orderId;
       this.transactionId = orderData.transactionId;
       this.items = orderData.items;
@@ -45,12 +38,5 @@ export class OrderSuccessComponent implements OnInit {
     });
   }
 
-  showFeedbackPrompt(): void {
-    this.showPrompt = true;
-  }
 
-  // submitFeedback(): void {
-  //   // submit feedback logic here
-  //   this.showPrompt = false;
-  // }
 }

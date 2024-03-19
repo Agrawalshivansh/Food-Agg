@@ -8,12 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-
-  // constructor(private userProfileService: UserDataService,
-  //   private router: Router) { }
-
-  // ngOnInit(): void {
-  // }
   userProfileForm: FormGroup;
   isUpdateSuccess: boolean = false;
   isUpdateFailure: boolean = false;
@@ -52,8 +46,6 @@ export class UserProfileComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching user profile:', error);
-        // Handle error, e.g., redirect to login page
-        // this.router.navigate(['/login']);
       }
     );
   }

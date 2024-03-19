@@ -8,7 +8,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogoutComponent } from './logout/logout.component';
 import { OfferComponent } from './offer/offer.component';
 import { SupportComponent } from './support/support.component';
-import { CategoryComponent } from './category/category.component';
 import { StartersComponent } from './starters/starters.component';
 import { MainCourseComponent } from './main-course/main-course.component';
 import { DessertsComponent } from './desserts/desserts.component';
@@ -73,11 +72,8 @@ const routes: Routes = [
   { path:'dashboard',component:DashboardComponent },
   { path:'offer',component:OfferComponent },
   { path: 'starters',component:ItemsComponent },
-  // { path: 'main-course',component: MainCourseComponent },
   { path: 'main-course',component:BrassComponent  },
-  // { path:'desserts',component:DessertsComponent },
   { path:'desserts',component:BaskinComponent },
-  // { path:'beverages',component:BeveragesComponent },
   { path:'beverages',component:ToyComponent},
   { path:'roadhouse', component: RoadhouseComponent },
   { path:'bistra', component:BistraComponent },

@@ -1,9 +1,9 @@
-// import { register } from './../forgot/forgot.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RegisterService } from '../Services/register.service';
+import Swal from 'sweetalert2';
 export class reg {
   firstName: string 
   lastName: string 
@@ -23,7 +23,7 @@ export class RegisterComponent{
   loading = false;
   submitted = false;
   error = '';
-  constructor(private router: Router,private service: RegisterService) {
+  constructor(private router: Router,public registerService: RegisterService) {
     this.user = {} as reg;
   }
 
@@ -31,15 +31,12 @@ export class RegisterComponent{
     this.registrationform = new FormGroup({
       firstName: new FormControl(this.user.firstName, [
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(4),
       ]),
       lastName: new FormControl(this.user.lastName, [
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(4),
       ]),
-      // dob: new FormControl(this.user.dob, [
-      //   Validators.required,
-      // ]),
       phNumber: new FormControl(this.user.phNumber, [
         Validators.required,
         Validators.minLength(10),
@@ -79,48 +76,37 @@ export class RegisterComponent{
     return this.registrationform.get('phNumber');
   }
 
- 
-  // register() {
-  //    Object.values(this.registrationform.controls).forEach(control => {
-  //      control.markAsTouched();
-  //    });
-   
-  //    if (this.registrationform.valid) {
-  //      let response = this.service.registerUser(this.registrationform.value).subscribe({
-  //        next: (data) =>{ 
-  //             },
-  //        error: (e) =>{ if(e.status){
-  //          alert('Registration successful!'); 
-  //      this.router.navigate(['/login']);
-  //    } else {
-  //         alert('Email already exsist, use other email or click on login.')
-  //      }
-  //    },
-  //  })
-  //  }
-  //  }
-
-  register() {
-    // Handle registration logic here
-     Object.values(this.registrationform.controls).forEach(control => {
-       control.markAsTouched();
-     });
-   
-     if (this.registrationform.valid) {
-       let response = this.service.registerUser(this.registrationform.value).subscribe({
-         next: (data) =>{ 
-              },
-         error: (e) =>{ if(e.status===200){
-           alert('Registration successful!'); 
-       this.router.navigate(['/login']);
-       
-     } else {
-          alert('Email already exsist, use other email or click on login.')
-       }
-     },
-   })
-   }}
-  
+  registerUser() {
+    this.user = this.registrationform.value
+    this.registerService.registerUser(this.user).subscribe({
+      next: (data) =>{ 
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'Registration successful!'
+        }).then
+        this.router.navigate(['/login']);
+      },
+      error: (e) => {
+        console.log(e);
+        if (e.status === 200 || e.status === 201) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Registration successful!'
+          }).then
+          this.router.navigate(['/login']);
+        } 
+          else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Email already exists. Please use a different email address or login!'
+          }).then
+        }
+      }
+  });
+  }
   login(){
     this.router.navigate(['/login'])
   }

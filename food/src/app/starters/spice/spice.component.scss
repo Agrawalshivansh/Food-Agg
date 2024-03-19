@@ -8,10 +8,7 @@ img{
   }
 
   .filter-container {
-  /* background-color: rgba(17, 214, 228, 0.5); */
   background-color:aliceblue;
-   /*background-color: rgba(9, 9, 9, 0.5);
-   background-image: url('/assets/img/bg/bgp20.jpg');*/
   color: #fff;
   padding: 20px;
   display: flex;
@@ -204,19 +201,6 @@ body{
   align-items: center;
 }
 
-// .navbar{
-//   z-index: 99;
-//   position: fixed;
-//   top: 0;
-//   display: flex;
-//   width: 100vw;
-//   height: 80px;
-//   background-color: white;
-//   justify-content: space-between;
-//   align-items: center;
-//   box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
-// }
-
 ul{
   display: flex;
   list-style: none;
@@ -231,24 +215,6 @@ li{
   cursor: pointer;
   padding: 10px;
 }
-// .leftbar{
-//   width: 50%;
-//   display: flex;
-//   justify-content: flex-start;
-// }
-// .leftbar li{
-//   margin: 5px;
-// }
-// .leftbar img{
-//   height: 50px;
-//   margin: 0 25px;
-// }
-
-// .rigthbar{
-//   width: 50%;
-//   display: flex;
-//   justify-content: center;
-// }
 
 li:hover{
   color: #fc8019;

@@ -14,8 +14,6 @@ export class OrderDetailsService {
     return this.http.get<any[]>(this.apiUrl);
   }
   placeOrder(orderData: any): Observable<any> {
-    // Logic to place order goes here
-    // After successfully placing order, emit order success event
     this.orderSuccessSubject.next(orderData);
     return this.http.post<any>(this.apiUrl, orderData);
   }

@@ -17,7 +17,6 @@ import { LogoutComponent } from './logout/logout.component';
 import { OfferComponent } from './offer/offer.component';
 import { SupportComponent } from './support/support.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CategoryComponent } from './category/category.component';
 import { StartersComponent } from './starters/starters.component';
 import { MainCourseComponent } from './main-course/main-course.component';
 import { DessertsComponent } from './desserts/desserts.component';
@@ -86,7 +85,6 @@ import { Menu1Component } from './menu1/menu1.component';
     OfferComponent,
     SupportComponent,
     ProfileComponent,
-    CategoryComponent,
     FooterComponent,
     StartersComponent,
     MainCourseComponent,

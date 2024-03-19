@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from '../Services/login.service';
+import Swal from 'sweetalert2';
 export class register {
   email: string;
   password: string;
@@ -56,23 +57,32 @@ export class LoginComponent{
     this.user = this.loginform.value
     this.loginservice.loginUser(this.user).subscribe({
       next: (data) =>{ 
-        alert("Login successful");
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'Registration successful!'
+        }).then
         this.router.navigate(['/dashboard']);
       },
       error: (e) => {
         console.log(e);
         if (e.status === 200) {
-          alert("Login successful");
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Login successful!'
+          }).then
           this.router.navigate(['/dashboard']);
-          console.log("logged in");
         } else {
-         alert("Login failed");
-          console.log("logged fail");
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Invalid Credentials!'
+          }).then
         }
       }
   });
   }
-
   
   forgotPassword() {
     this.router.navigate(['/forgot'])
