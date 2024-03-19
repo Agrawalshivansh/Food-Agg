@@ -1,0 +1,52 @@
+<!-- <div class="navbar"> -->
+  <!-- <div class="leftbar">
+      <ul>
+          <li><a href=" "><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOVHDyOq-G2nM1sQVk5ICoR84Fsmd_MTzwAF1rhEg7lEdovP8Wryzw8apfmH0oH3M5EAI&usqp=CAU" alt=""></a></li>
+          <div style="margin-top: 12%; margin-left: -7%;">
+              WELCOME
+          </div>
+      </ul>
+  </div>
+  <div class="rightbar">
+      <ul>
+          <li><span class="material-symbols-outlined"></span>Search</li>
+          <li> <a href="#" routerLink="/offer">%Offer</a></li>
+          <li><a href="#" routerLink="/login">Logout</a></li>
+          <li><app-profile></app-profile></li>
+          <li> <a href="#" routerLink="/support">Help</a></li>
+      </ul>
+  </div>
+</div> -->
+<body>
+  <!-- <div class="container">
+    <h1 style="color:rgb(98, 220, 98)">Your order has been placed successfully!</h1>
+    <p style="color:rgb(226, 25, 25); margin-left: 280px;" >Order ID: {{ orderId }}</p>
+    <p style="color:rgb(229, 19, 19); margin-left: 250px;">Transaction ID: {{ transactionId }}</p>
+    <ul>
+      <li *ngFor="let item of items">{{ item.name }} - {{ item.price }}</li>
+      <li>Total: ₹{{ total }}</li>
+    </ul>
+    <p>"Your food is in transit! Get ready to dig in and indulge in some culinary delights!"</p>
+    <div class="buttons">
+    <button (click)="showFeedbackPrompt()">Leave Feedback</button>
+    <button routerLink="/my-orders">My Orders</button>
+  </div>
+  </div> -->
+  <div class="container">
+    <h1 style="color:black">Your order has been placed successfully!</h1>
+    <p style="color:rgb(226, 25, 25);;" >Order ID: {{ orderId }}</p>
+    <p style="color:rgb(229, 19, 19);">Transaction ID: {{ transactionId }}</p>
+    <ul>
+      <li *ngFor="let item of items">{{ item.name }} - {{ item.price }}</li>
+      <li>Total: ₹{{ total }}</li>
+    </ul>
+    <p>"Your food is in transit! Get ready to dig in and indulge in some culinary delights!"</p>
+    <div class="buttons">
+      <!-- <button (click)="showFeedbackPrompt()">Leave Feedback</button> -->
+      <button routerLink="/my-orders">My Orders</button>
+    </div>
+  </div>
+  
+</body>
+<!-- <app-footer></app-footer> -->
+  

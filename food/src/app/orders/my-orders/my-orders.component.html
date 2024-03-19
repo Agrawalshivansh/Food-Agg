@@ -1,0 +1,67 @@
+<!-- <div class="navbar">
+  <div class="leftbar">
+      <ul>
+          <li><a href=" "><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOVHDyOq-G2nM1sQVk5ICoR84Fsmd_MTzwAF1rhEg7lEdovP8Wryzw8apfmH0oH3M5EAI&usqp=CAU" alt=""></a></li>
+          <div style="margin-top: 12%; margin-left: -7%;">
+              WELCOME
+          </div>
+      </ul>
+  </div>
+  <div class="rightbar">
+      <ul>
+          <li><span class="material-symbols-outlined"></span>Search</li>
+          <li> <a href="#" routerLink="/offer">%Offer</a></li>
+          <li><a href="#" routerLink="/login">Logout</a></li>
+          <li><app-profile></app-profile></li>
+          <li> <a href="#" routerLink="/support">Help</a></li>
+          <li><span class="material-symbols-outlined"></span>Cart</li>
+      </ul>
+  </div>
+</div> -->
+<body>
+<h2>My Orders</h2>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Item Name</th>
+      <th>Transaction ID</th>
+      <th>Status</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.orderId }}</td>
+      <td>{{ order.itemName }}</td>
+      <td>{{ order.transactionId }}</td>
+      <td>{{ order.status }}</td>
+      <td>{{ order.totalPrice }}₹</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Item Name</th>
+      <th>Transaction ID</th>
+      <th>Status</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.orderId }}</td>
+      <td>{{ order.itemName }}</td>
+      <td>{{ order.transactionId }}</td>
+      <td>{{ order.status }}</td>
+      <td>{{ order.totalPrice }}₹</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <app-footer></app-footer> -->
+</body>

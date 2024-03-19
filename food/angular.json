@@ -29,8 +29,9 @@
             ],
             "styles": [
               "src/styles.scss",
-              "C:/Users/sagrawal203/food/node_modules/bootstrap/scss/bootstrap.scss",
-              "C:/Users/sagrawal203/food/node_modules/bootstrap-icons/font/bootstrap-icons.scss"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": []
           },

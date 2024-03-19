@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { LoginService } from '../login.service';
+import { LoginService } from '../Services/login.service';
 export class register {
   email: string;
   password: string;

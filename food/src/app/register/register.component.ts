@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { RegisterService } from '../register.service';
+import { RegisterService } from '../Services/register.service';
 export class reg {
   firstName: string 
   lastName: string 

@@ -1,30 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from '../cart.service';
-import { OrderDetailsService } from '../order-details.service';
+import { Component } from '@angular/core';
+import { CartService } from './cart.service';
+import { FoodItem } from '../menu/items/food-items';
+import { faTrash,faPlus,faTimes,faMinus } from '@fortawesome/free-solid-svg-icons';
+
+interface CartItem extends FoodItem {
+  quantity: number;
+}
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
+  cartItems: CartItem[] = [];
+  faTrash = faTrash;
+  faPlus = faPlus;
+  faTimes = faTimes;
+  faMinus = faMinus;
 
-  public product: any = [];
-  public grandTotal: number = 0;
-  constructor(private cartservice: CartService, private foods: OrderDetailsService) {}
-  ngOnInit(): void {
-    // this.cartservice.getProduct().subscribe(res=> {
-    //   this.product = res;
-    //   this.grandTotal = this.cartservice.getTotalPrice()
-    // })
-    
-  }
-  removeItem(item:any) {
-    this.cartservice.removeCartItem(item)
+  constructor(private cartService: CartService) {
+    this.cartItems = cartService.getCartItems();
   }
 
-  emptyCart () {
-    this.cartservice.removeAllCart()
+  increaseItemQuantity(item: CartItem) {
+    item.quantity = item.quantity + 1;
   }
 
+
+  decreaseItemQuantity(item: CartItem) {
+    if (item.quantity > 1) {
+      item.quantity = item.quantity - 1;
+    }
+  }
+
+  removeItemFromCart(item: CartItem) {
+    this.cartService.removeItemFromCart(item);
+    const index = this.cartItems.indexOf(item);
+    if (index !== -1) {
+      this.cartItems.splice(index, 1);
+    }
+  }
+
+  clearCart() {
+    this.cartService.clearCart();
+    this.cartItems = [];
+  }
+
+  getTotalPrice() {
+    return this.cartService.getTotalPrice();
+  }
 }
-

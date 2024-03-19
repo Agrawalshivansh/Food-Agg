@@ -1,5 +1,5 @@
 <div class="bag">
-    <div class="navbar">
+    <!-- <div class="navbar">
       <div class="leftbar">
           <ul>
             <li><a href="dashboard"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOVHDyOq-G2nM1sQVk5ICoR84Fsmd_MTzwAF1rhEg7lEdovP8Wryzw8apfmH0oH3M5EAI&usqp=CAU" alt=""></a></li>
@@ -18,13 +18,14 @@
               <span class="material-symbols-outlined"><span class="bi bi-person-circle" style="font-size:1.5rem"></span>&nbsp;</span>User</li>
           </ul>
       </div>
-    </div>
+    </div> -->
     
     <div class="starter-page">
       <h3 style="text-align: center;">Starters</h3>
       <div class="starter-list">
         <div class="starter-item" *ngFor="let starter of starters">
-          <img [src]="starter.image" alt="starter Image">
+          <img [src]="starter.image" alt="starter Image" (click)="navigateToStarters(starter.link)">
+
           <div class="starter-details" style="text-align: center;">
             <h3>{{ starter.title }}</h3>
             <p>{{ starter.description }}</p>
@@ -33,5 +34,5 @@
       </div>
     </div>
     
-    <app-footer></app-footer>
+    <!-- <app-footer></app-footer> -->
    

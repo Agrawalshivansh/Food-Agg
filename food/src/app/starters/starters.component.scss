@@ -38,18 +38,18 @@
   font-size: small;
 }
 
-.navbar{
-  z-index: 99;
-  position: fixed;
-  top: 0;
-  display: flex;
-  width: 100vw;
-  height: 80px;
-  background-color: white;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
-}
+// .navbar{
+//   z-index: 99;
+//   position: fixed;
+//   top: 0;
+//   display: flex;
+//   width: 100vw;
+//   height: 80px;
+//   background-color: white;
+//   justify-content: space-between;
+//   align-items: center;
+//   box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+// }
 
 ul{
   display: flex;
@@ -65,25 +65,25 @@ li{
   cursor: pointer;
   padding: 10px;
 }
-.leftbar{
-  width: 50%;
-  display: flex;
-  justify-content: flex-start;
-}
-.leftbar li{
-  margin: 5px;
-}
-.leftbar img{
-  height: 50px;
-  margin: 0 25px;
-}
+// .leftbar{
+//   width: 50%;
+//   display: flex;
+//   justify-content: flex-start;
+// }
+// .leftbar li{
+//   margin: 5px;
+// }
+// .leftbar img{
+//   height: 50px;
+//   margin: 0 25px;
+// }
 
-.rigthbar{
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+// .rigthbar{
+//   width: 50%;
+//   display: flex;
+//   justify-content: center;
+//   // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+// }
 
 li:hover{
   color: #fc8019;
@@ -91,23 +91,23 @@ li:hover{
 i{
   position: relative;
 }
-.footer{
-  width: 100vw;
-  background-color: whitesmoke;
-  color: black;
-  display: flex;
-  justify-content: space-evenly;
-  height: 250px;
-  padding: 20px 0px;
-  position: relative;
-  top: 100px;
-}
-.footer .col{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.footer h3{
-  color: #fc8019;
-}
+// .footer{
+//   width: 100vw;
+//   background-color: whitesmoke;
+//   color: black;
+//   display: flex;
+//   justify-content: space-evenly;
+//   height: 250px;
+//   padding: 20px 0px;
+//   position: relative;
+//   top: 100px;
+// }
+// .footer .col{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-evenly;
+//   align-items: center;
+// }
+// .footer h3{
+//   color: #fc8019;
+// }

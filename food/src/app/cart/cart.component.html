@@ -1,59 +1,73 @@
-<!-- <ng-container  *ngIf="product.length !=0">
-    <div class="container">
-        <div class="card-table bg-white">
-            <div class="cart-product">
-                <table class="table table-responsive">
-                    <thead>
-                        <tr>
-                            <th>N</th>
-                            <th>Product Name</th>
-                            <th class="tohide">Product Image</th>
-                            <th class="tohide">Description</th>
-                            <th >Price</th>
-                            <th>Quantity</th>
-                            
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of product; let i = index">
-                            <td>{{i + 1}}</td>
-                            <td>{{item.foodName}}</td>
-                            <td class="tohide">
-                                <img  style="width: 120px;" src="{{item.foodImg}}" alt="">
-                            </td>
-                            <td  class="tohide" style="width: auto;">{{item.foodDetail}}</td>
-                            <td  style="width: 12%;">${{item.foodPrice}}</td>
-                            <td style="width: 5%;">{{item.quantity}}</td>
-                           
-                            <td colspan="3">
-                                <button (click)="removeItem(item)" class="btn btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td  colspan="2"></td>
-                                <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>
-                                <td><button routerLink="/menu" routerLinkActive="router-link-active"  class="btn btn-primary">Shop More</button></td>
-                                <td><strong>Total : ${{grandTotal }}</strong></td>
-                            
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</ng-container>
+<!-- <div class="navbar">
+  <div class="leftbar">
+      <ul>
+          <li><a href=" "><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOVHDyOq-G2nM1sQVk5ICoR84Fsmd_MTzwAF1rhEg7lEdovP8Wryzw8apfmH0oH3M5EAI&usqp=CAU" alt=""></a></li>
+          <div style="margin-top: 12%; margin-left: -7%;">
+              WELCOME
+          </div>
+      </ul>
+  </div>
+  <div class="rightbar">
+      <ul>
+          <li><span class="material-symbols-outlined"></span>Search</li>
+          <li> <a href="#" routerLink="/offer">%Offer</a></li>
+          <li> <a href="#" routerLink="/dashboard">Menu</a></li>
+          <li> <a href="#" routerLink="/support">Help</a></li>
+          <li><span class="material-symbols-outlined"></span>Cart</li>
+      </ul>
+  </div>
+</div> -->
 
-<ng-container *ngIf="product.length ==0">
+<body>
+  <div class="scrollable-section">
 <div class="container">
-    <div class="card">
-        <h5 class="card-title">My Cart</h5>
-    </div>
-        <div class="center">
-        <img src="../../../assets/cart.png" alt="">
-        <h4>Your cart is empty</h4>
-        <h6>Add item to it now</h6>
-        <button routerLink="/menu" routerLinkActive="router-link-active"  class="btn btn-primary">Shop Now</button>
-    </div>
+  <h2 style="color:black">My Cart</h2>
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th style="text-align: center;">ID</th>
+        <th style="text-align: center;">Name</th>
+        <th style="text-align: center;">Type</th>
+        <th style="text-align: center;">Price</th>
+        <th style="text-align: center;">Quantity</th>
+        <th style="text-align: center;">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems" style="text-align: center;">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.price | currency: 'INR' }}</td>
+        <td>
+          <button class="quantity-button" (click)="decreaseItemQuantity(item)" *ngIf="item.quantity > 1">-</button>
+          {{ item.quantity }}
+          <button class="quantity-button" (click)="increaseItemQuantity(item)">+</button>
+        </td>
+        <td>{{ (item.price * item.quantity) | currency: 'INR' }}</td>
+        <td>
+          <div class="trash-button">
+            <button (click)="removeItemFromCart(item)">
+              <span class="bi bi-trash" style="font-size:1.5rem;color: red;"></span>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <br>
+      <tr>
+        <td colspan="4" style="text-align: center; font-weight: bold;color:black">Total:</td>
+        <td style="text-align: center;color:rgb(18, 17, 17); font-weight: bold;">{{ getTotalPrice() | currency: 'INR' }}</td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="cart-buttons">
+    <button routerLink="/dashboard">Add More</button>
+    <button routerLink="/order-form" *ngIf="cartItems.length > 0">Checkout</button>
+  </div>
 </div>
-</ng-container> -->
+</div>
+</body>
+<!-- <app-footer></app-footer> -->
