@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormControl} from '@angular/forms';
+import { ForgotPasswordService } from '../Services/forgotpassword.service';
 export class register {
   email: string;
   cemail: string;
@@ -16,7 +17,8 @@ export class ForgotComponent{
   emailform!: FormGroup;
   user: register;
 
-  constructor(public router: Router) {this.user = {} as register;}
+  constructor(public router: Router,private forgotPasswordService: ForgotPasswordService) 
+  {this.user = {} as register;}
  
   ngOnInit(): void {
     this.emailform = new FormGroup({
@@ -47,10 +49,24 @@ export class ForgotComponent{
   }
 
   onSubmit() {
-    if (this.email.value !== this.cemail.value) {
-      alert('Emails do not match');
-    } else {
-      alert('Form submitted successfully');
+    if (this.emailform.valid) {
+      const email = this.emailform.value.email;
+      this.forgotPasswordService.sendResetLink(email).subscribe(
+        (response) => {
+          console.log('Password reset link sent successfully:', response);
+          // You can handle success message or redirection here
+        },
+        (error) => {
+          console.error('Error sending reset link:', error);
+          // You can handle error messages here
+        }
+      );
     }
+
+    // if (this.email.value !== this.cemail.value) {
+    //   alert('Emails do not match');
+    // } else {
+    //   alert('Form submitted successfully');
+    // }
   }
 }

@@ -19,13 +19,13 @@ export const starters: FoodItem[] = [
 { id: 7, name: 'Fried Mozzarella Sticks', price: 250,  image: 'https://allshecooks.com/wp-content/uploads/2013/10/mozzarella-sticks.jpg', type: 'veg', quantity: 1 },
 { id: 8, name: 'Chilli Potato ', price: 250,  image: 'https://storage.googleapis.com/shy-pub/64121/1629517711523_SKU-0041_0.JPG', type: 'veg', quantity: 1 },
 { id: 9, name: 'Manchurian ', price: 220,  image: 'https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375-600x600.jpg', type: 'veg', quantity: 1 },
-{ id: 9, name: 'Chilli Prawns ', price: 220,  image: 'https://www.licious.in/blog/wp-content/uploads/2020/12/Chilli-Prawns.jpg', type: 'non-veg', quantity: 1 },
+{ id: 10, name: 'Chilli Prawns ', price: 220,  image: 'https://www.licious.in/blog/wp-content/uploads/2020/12/Chilli-Prawns.jpg', type: 'non-veg', quantity: 1 },
 ];
     export const milkshakes: FoodItem[] = [
-      {id:10, name: 'Chocolate Shake', price: 150,  image: 'https://static.toiimg.com/photo/84170265.cms', type: 'veg', quantity: 1 },
-      {id:11, name: 'Strawberry Shake', price: 150,  image: 'https://valentinascorner.com/wp-content/uploads/2022/03/Strawberry-Milkshake--500x500.jpg', type: 'veg', quantity: 1 },
-      {id:12, name: 'Vanilla Shake', price: 150,  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/12/classic-vanilla-milkshake-9e7745f.jpg?quality=90&resize=544,494', type: 'veg', quantity: 1 },
-      {id:13, name: 'Oreo Shake', price: 170,  image: 'https://www.whiskaffair.com/wp-content/uploads/2020/07/Oreo-Milkshake-2-3.jpg', type: 'veg', quantity: 1 },
-      {id:14, name: 'Caramel Shake', price: 170,  image: 'https://thymeforflavor.com/wp-content/uploads/2022/08/feature-3-caramel-milkshake.jpg', type: 'veg', quantity: 1 },
-      {id:14, name: 'Mango Shake', price: 170,  image: 'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/04/mango-milkshake-recipe.jpg', type: 'veg', quantity: 1 },
+      {id:11, name: 'Chocolate Shake', price: 150,  image: 'https://static.toiimg.com/photo/84170265.cms', type: 'veg', quantity: 1 },
+      {id:12, name: 'Strawberry Shake', price: 150,  image: 'https://valentinascorner.com/wp-content/uploads/2022/03/Strawberry-Milkshake--500x500.jpg', type: 'veg', quantity: 1 },
+      {id:13, name: 'Vanilla Shake', price: 150,  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/12/classic-vanilla-milkshake-9e7745f.jpg?quality=90&resize=544,494', type: 'veg', quantity: 1 },
+      {id:14, name: 'Oreo Shake', price: 170,  image: 'https://www.whiskaffair.com/wp-content/uploads/2020/07/Oreo-Milkshake-2-3.jpg', type: 'veg', quantity: 1 },
+      {id:15, name: 'Caramel Shake', price: 170,  image: 'https://thymeforflavor.com/wp-content/uploads/2022/08/feature-3-caramel-milkshake.jpg', type: 'veg', quantity: 1 },
+      {id:16, name: 'Mango Shake', price: 170,  image: 'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/04/mango-milkshake-recipe.jpg', type: 'veg', quantity: 1 },
     ];

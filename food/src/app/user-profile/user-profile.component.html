@@ -1,4 +1,4 @@
-<div class="container profile-div">
+<!-- <div class="container profile-div">
     <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
             <h2 style="margin-bottom: 40px;">Your profile</h2>
@@ -43,4 +43,41 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
+
+<div class="user-box">
+    <div class="user">
+      <h2>User Profile</h2> &nbsp;
+      <div *ngIf="!editMode">
+        <p><strong>Name:</strong> {{ userProfile.name }}</p>
+        <p><strong>Email:</strong> {{ userProfile.email }}</p>
+        <p><strong>Phone Number:</strong> {{ userProfile.phoneNumber }}</p>
+        <p><strong>Address:</strong> {{ userProfile.address }}</p>
+        <!-- Add more user profile fields as needed -->
+        <button class="btn btn-primary" (click)="toggleEditMode()">Edit Information</button>
+      </div>
+      <div *ngIf="editMode">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" formControlName="phoneNumber" class="form-control" id="phoneNumber">
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea formControlName="address" class="form-control" id="address" rows="3"></textarea>
+          </div>
+          <!-- Add more form controls for additional user profile fields -->
+          <button type="submit" class="btn btn-primary">Save Changes</button>&nbsp;
+          <button type="button" class="btn btn-secondary" (click)="toggleEditMode()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>

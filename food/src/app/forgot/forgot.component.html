@@ -1,7 +1,7 @@
 <div class="container">
     <div class="forgot">
       <h2>Forgot Password</h2>
-      <form [formGroup]="emailform" #form="ngForm">
+      <form [formGroup]="emailform" #form="ngForm" (ngSubmit)="onSubmit()">
         <label for="email" class="form-label">Email Id:</label>
         <input
           type="email"

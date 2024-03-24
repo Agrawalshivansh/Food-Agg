@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { RegisterService } from '../Services/register.service';
 import Swal from 'sweetalert2';
 export class reg {
-  firstName: string 
+  firstName: string
   lastName: string 
   email: string;
   password: string;

@@ -10,7 +10,7 @@ export class RegisterService {
     throw new Error('Method not implemented.');
   }
 
-  private baseURL = "http://localhost:8080/api/v/register";
+  private baseURL = "http://localhost:8083/api/v/register";
   constructor(private httpClient:HttpClient) { }
  
   registerUser(reg:reg){

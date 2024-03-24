@@ -76,3 +76,13 @@ a{
 a:hover{
     color: #fc8019;
 }
+img {
+    width: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border: solid 6px transparent;
+}
+img:hover {
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 3px rgba(127, 127, 127, 0.15);
+}

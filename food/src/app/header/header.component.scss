@@ -63,3 +63,47 @@ a{
 .nav-link:hover{
     color: #fc8019;
 }
+/* search.component.scss */
+
+.search-container {
+    position: relative;
+  }
+  
+  .search-button {
+    cursor: pointer;
+    padding: 5px 10px;
+    color:black;
+    border-radius: 5px;
+  }
+  
+  .search-button:hover {
+    color:#fc8019;
+  }
+  
+
+.dropdown {
+    position: relative; 
+}
+
+.dropdown-menu {
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    z-index: 1000;
+    background-color: #ffffff; 
+    border: 1px solid #ced4da;
+    color: #333333; 
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    color: #fc8019;
+}
+
+// .dropdown-item {
+//     display:list-item;
+//     cursor: pointer;
+//     margin-top: 3%;
+//     padding: 3%;
+// }

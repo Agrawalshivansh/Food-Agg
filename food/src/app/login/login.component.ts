@@ -9,6 +9,7 @@ export class register {
   email: string;
   password: string;
 }
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,6 +21,8 @@ export class LoginComponent{
   loading = false;
   submitted = false;
   error = '';
+  isLoggedIn: boolean = false;
+  displayName=''
   constructor(private router: Router, private loginservice:LoginService) {
     this.user = {} as register;
   }
@@ -57,22 +60,26 @@ export class LoginComponent{
     this.user = this.loginform.value
     this.loginservice.loginUser(this.user).subscribe({
       next: (data) =>{ 
+        this.isLoggedIn = true
+        console.log(this.isLoggedIn)
         Swal.fire({
           icon: 'success',
           title: 'Success',
           text: 'Registration successful!'
         }).then
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard'],{ queryParams: { isLoggedIn: 'true' } })
       },
       error: (e) => {
         console.log(e);
         if (e.status === 200) {
+          this.isLoggedIn = true;
+          console.log(this.isLoggedIn)
           Swal.fire({
             icon: 'success',
             title: 'Success',
             text: 'Login successful!'
           }).then
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/dashboard'],{ queryParams: { isLoggedIn: 'true' } })
         } else {
           Swal.fire({
             icon: 'error',
@@ -91,4 +98,5 @@ export class LoginComponent{
   register() {
     this.router.navigate(['/register'])
   }
+
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodItem } from './food-items';
-// import { soups, starters, curries, breads, mainCourses, desserts, iceCreams, milkshakes } from './food-items';
 import { starters, milkshakes } from './food-items';
 import { CartService } from '../../cart/cart.service';
 

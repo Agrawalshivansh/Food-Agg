@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnDestroy} from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -10,22 +9,24 @@ import { Subscription } from 'rxjs';
 export class ProfileComponent implements OnInit {
   isLoggedIn: boolean = false;
   displayName: string = '';
-  isAdmin: boolean = false;
-  constructor( private router: Router) { }
+  constructor(private router: Router,private route: ActivatedRoute) {}
   ngOnInit(): void {
-    
+      this.route.queryParams.subscribe(params => {
+        if (params['isLoggedIn'] === 'true') {
+          this.isLoggedIn = true;
+        }
+    });
   }
-  onLogin(){
-     this.router.navigate(['login']) 
-    this.isLoggedIn = true;
+  onLogin(): void {
+    this.router.navigate(['/login']);
   }
-  onLogOut() {
+  onLogout() {
     this.isLoggedIn = false;
+    this.router.navigate(['/login'])
   }
   
   visitProfile() {
     let _name: string;
-    // _name = this.userDataService.getName.split(' ').join('-');
     this.router.navigate(['user-profile']);
   
   }

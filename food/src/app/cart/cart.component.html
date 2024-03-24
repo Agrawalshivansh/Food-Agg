@@ -5,9 +5,9 @@
   <table class="cart-table">
     <thead>
       <tr>
-        <th style="text-align: center;">ID</th>
+        <th style="text-align: center;">Item_ID</th>
         <th style="text-align: center;">Name</th>
-        <th style="text-align: center;">Type</th>
+        <!-- <th style="text-align: center;">Type</th> -->
         <th style="text-align: center;">Price</th>
         <th style="text-align: center;">Quantity</th>
         <th style="text-align: center;">Total</th>
@@ -17,19 +17,19 @@
       <tr *ngFor="let item of cartItems" style="text-align: center;">
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
-        <td>{{ item.type }}</td>
+        <!-- <td>{{ item.type }}</td> -->
         <td>{{ item.price | currency: 'INR' }}</td>
         <td>
-          <button class="quantity-button" (click)="decreaseItemQuantity(item)" *ngIf="item.quantity > 1">-</button>
+          <!-- <button class="quantity-button" (click)="decreaseItemQuantity(item)" *ngIf="item.quantity > 1">-</button>
+          {{ item.quantity }} -->
+          <span class="bi bi-file-minus" (click)="decreaseItemQuantity(item)" style="font-size:1.5rem;color: green;" *ngIf="item.quantity > 1"></span>
           {{ item.quantity }}
-          <button class="quantity-button" (click)="increaseItemQuantity(item)">+</button>
+          <span class="bi bi-plus" (click)="increaseItemQuantity(item)" style="font-size:1.5rem;color: green; "></span>
         </td>
         <td>{{ (item.price * item.quantity) | currency: 'INR' }}</td>
         <td>
           <div class="trash-button">
-            <button (click)="removeItemFromCart(item)">
-              <span class="bi bi-trash" style="font-size:1.5rem;color: red;"></span>
-            </button>
+              <span class="bi bi-trash" (click)="removeItemFromCart(item)" style="font-size:1.5rem;color: red; "></span>
           </div>
         </td>
       </tr>
